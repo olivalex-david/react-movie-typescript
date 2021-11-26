@@ -8,7 +8,7 @@ import Home from './components/Home';
 import NotFound from './components/NotFound';
 import Movie from './components/Movie';
 
-const App = () => (
+const App:React.FC = () => (
       <Router >
         <Header/>
         <Routes>
