@@ -5,7 +5,8 @@ import { Wrapper, Content, LogoImg, TMDBLogoImg } from './Header.styles';
 import ErrorBoundary from '../ErrorBoundary';
 import { Link } from 'react-router-dom';
 
-const Header = () => (
+
+const Header: React.FC = () => (
     <Wrapper>
         <Content>
             <ErrorBoundary>

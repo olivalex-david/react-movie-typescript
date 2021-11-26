@@ -1,12 +1,12 @@
 import React from "react";
-import { Wrapper, Content, Text } from '../MovieInfo/MovieInfo.styles';
+import { Wrapper, Content, Text } from './MovieInfo.styles';
 import Thumb from "../Thumb/thumbIndex";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
 import NoImage from '../../images/no_image.jpg';
 import { nanoid } from "nanoid";
 import PropTypes from 'prop-types';
 
-const MovieInfo = ({ movie }) => (
+const MovieInfo: React.FC<Props> = ({ movie }) => (
     <Wrapper backdrop={movie.backdrop_path}>
         <Content>
             <Thumb className="thumb"

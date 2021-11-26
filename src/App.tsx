@@ -3,12 +3,12 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import {GlobalStyle} from './GlobalStyle'
-import Header from './components/Header/headerIndex.js';
+import Header from './components/Header/headerIndex';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import Movie from './components/Movie';
 
-const App:React.FC = () => (
+const App: React.FC = () => (
       <Router >
         <Header/>
         <Routes>
