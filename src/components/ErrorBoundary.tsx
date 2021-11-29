@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { ErrorInfo, ReactNode } from 'react';
 
-export default class ErrorBoundary extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = { hasError: false, error: '', errorInfo: '' };
-    }
+type Props = {
+  children: ReactNode;
+}
+
+type State = {
+  hasError: boolean;
+  error: string;
+  errorInfo: string;
+}
+
+export default class ErrorBoundary extends React.Component<Props, State> {
+  public state: State = {
+    hasError: false, error: '', errorInfo: ''
+  }  
+ 
   
-    static getDerivedStateFromError(error) {
+    static getDerivedStateFromError(_: Error) {
       // Update state so the next render will show the fallback UI.
       return { hasError: true };
     }
   
-    componentDidCatch(error, errorInfo) {
+    componentDidCatch(error: Error, errorInfo: ErrorInfo) {
       // You can also log the error to an error reporting service
-      this.setState({
-        error: error,
-        errorInfo: errorInfo
-      });
       console.log(error, errorInfo);
     }
   
@@ -29,10 +35,8 @@ export default class ErrorBoundary extends React.Component {
             <details >
               {this.state.error && this.state.error.toString()}
               <br/>
-              {this.state.errorInfo.componentStack}
             </details>
           </div>
-          
         );
       }
   

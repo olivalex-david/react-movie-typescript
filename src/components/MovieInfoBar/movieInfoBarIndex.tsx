@@ -3,9 +3,13 @@ import React from "react";
 import { calcTime, convertMoney } from '../../helpers';
 import { Wrapper, Content } from "./MovieInfoBar.styles";
 
-import PropTypes from 'prop-types';
+type Props = {
+    time: number;
+    budget: number;
+    revenue: number;
+}
 
-const MovieInfoBar = ({ time, budget, revenue }) => (
+const MovieInfoBar: React.FC<Props> = ({ time, budget, revenue }) => (
 
     <Wrapper>
         <Content>
@@ -22,11 +26,5 @@ const MovieInfoBar = ({ time, budget, revenue }) => (
     </Wrapper>
     
 );
-
-MovieInfoBar.propTypes = {
-    time: PropTypes.number.isRequired,
-    budget: PropTypes.number.isRequired,
-    revenue: PropTypes.number.isRequired
-};
 
 export default MovieInfoBar;

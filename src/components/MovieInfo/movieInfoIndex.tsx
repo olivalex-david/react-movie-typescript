@@ -4,16 +4,20 @@ import Thumb from "../Thumb/thumbIndex";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
 import NoImage from '../../images/no_image.jpg';
 import { nanoid } from "nanoid";
-import PropTypes from 'prop-types';
+import { MovieState } from '../../hooks/useMovieFetch';
+
+type Props = {
+    movie: MovieState;
+}
 
 const MovieInfo: React.FC<Props> = ({ movie }) => (
     <Wrapper backdrop={movie.backdrop_path}>
         <Content>
-            <Thumb className="thumb"
+            <Thumb
                 image={movie.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
                 : NoImage} 
+                movieName={movie.original_title}
                 clickable={false} 
-                alt='movie-thumb'   
             />
             <Text>
                 <h1>{movie.title}</h1>
@@ -42,9 +46,5 @@ const MovieInfo: React.FC<Props> = ({ movie }) => (
         </Content>
     </Wrapper>
 );
-
-MovieInfo.propTypes = {
-    movie: PropTypes.object.isRequired
-};
 
 export default MovieInfo;

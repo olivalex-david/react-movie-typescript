@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import API, { Movie, Cast, Crew, Movies} from '../API';
+import { useState, useEffect } from 'react';
+import API, { Movie, Cast, Crew } from '../API';
 import { isPersistedState } from '../helpers';
 
 // Types
@@ -23,7 +23,6 @@ export const useMovieFetch = (movieId: number) => {
                 const directors = credits.crew.filter(
                     member => member.job === 'Director'
                 );
-    
     
                 setState({
                     ...movie,

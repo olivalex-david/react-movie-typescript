@@ -14,7 +14,6 @@ import { useMovieFetch } from '../hooks/useMovieFetch';
 // Image
 import NoImage from '../images/no_image.jpg'
 import { nanoid } from "nanoid";
-import { Movie as MovieType } from '../API';
 
 
 const Movie: React.FC = () => {

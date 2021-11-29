@@ -7,7 +7,7 @@ import { Fragment } from "react";
 type Props = {
     image: string;
     movieName: string;
-    movieId: number;
+    movieId?: number;
     clickable: boolean;
 }
 
