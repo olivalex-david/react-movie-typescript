@@ -6,7 +6,7 @@ import { Fragment } from "react";
 // Types
 type Props = {
     image: string;
-    movieName: string;
+    movieName?: string | null;
     movieId?: number;
     clickable: boolean;
 }
@@ -20,7 +20,6 @@ const Thumb: React.FC<Props> = ({image, movieName, movieId, clickable}) => (
             </Link>
         ) : (<Fragment>
                 <Image src={image} alt='movie-thumb' />
-                <Text >{movieName}</Text>
             </Fragment>
         )}
     </div>
