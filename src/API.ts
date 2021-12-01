@@ -58,7 +58,6 @@ export type Credits = {
 }
 
 
-
 const apiSettings = {
   fetchMovies: async (searchTerm: string, page: number): Promise<Movies> => {
     const endpoint: string = searchTerm
