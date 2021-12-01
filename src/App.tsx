@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // Routing
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -10,14 +10,16 @@ import Movie from './components/Movie';
 import Login from './components/Login';
 //Context
 import UserProvider from './context';
+import Context from './context';
 
-const App: React.FC = () => (
-    
+const App: React.FC = () => {
+  //const [user] = useContext(Context);
+  
+  return(  
       <Router >
         <UserProvider>
           <Header/>
           <Routes>
-
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />}/>
             <Route path='/*' element={<NotFound />}/>
@@ -27,5 +29,5 @@ const App: React.FC = () => (
         </UserProvider>
       </Router>
   );
-
+};
 export default App;
