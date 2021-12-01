@@ -7,16 +7,24 @@ import Header from './components/Header/headerIndex';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import Movie from './components/Movie';
+import Login from './components/Login';
+//Context
+import UserProvider from './context';
 
 const App: React.FC = () => (
+    
       <Router >
-        <Header/>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/*' element={<NotFound />}/>
-          <Route path='/:movieId/' element={<Movie />} />
-        </Routes>
-        <GlobalStyle/>
+        <UserProvider>
+          <Header/>
+          <Routes>
+
+            <Route path='/' element={<Home />} />
+            <Route path='/login' element={<Login />}/>
+            <Route path='/*' element={<NotFound />}/>
+            <Route path='/:movieId/' element={<Movie />} />
+          </Routes>
+          <GlobalStyle/>
+        </UserProvider>
       </Router>
   );
 
