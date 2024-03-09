@@ -76,7 +76,9 @@ const MovieInfo: React.FC<Props> = ({ movie }) => {
                         {user ? 
                             error ?
                                 <span>There was an error while rating!</span>
-                                : <Rate callBack={handleRating}/>
+                                : ratingSuccess ? 
+                                    <Rate callBack={handleRating} message='Sent Rating' />
+                                    : <Rate callBack={handleRating} />
                             : <span> Log in first</span>
                         }
                     </div>
